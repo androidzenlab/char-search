@@ -8,11 +8,15 @@ const OrganisationList = (props) => {
         const list = props.organisations.data.d.map(org => <li key={org.OrganisationId}>{org.Name}</li>);
         
             return (
+                <div className="org-list">
                 <ul className="list">{list}</ul>
+                </div>
             );
     } else {
         return (
+            <div className="org-list">
             <p>Loading...</p>
+            </div>
         );
     }
 
