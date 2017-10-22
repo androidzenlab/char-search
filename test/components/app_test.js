@@ -11,7 +11,7 @@ describe('App', () => {
 
   it('has a header', () => {
     console.log('app is:', component);
-    expect(component.find('nav')).to.exist;
+    expect(component.find('.navbar')).to.exist;
   });
 
   it('shows a organisation list', () => {

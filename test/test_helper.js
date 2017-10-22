@@ -5,19 +5,24 @@ import ReactDOM from 'react-dom';
 import chai, { expect } from 'chai';
 import React from 'react';
 import { Provider } from 'react-redux';
-import { createStore } from 'redux';
+import { createStore, applyMiddleware } from 'redux';
 import reducers from '../src/reducers';
 import chaiJquery from 'chai-jquery';
+
+import reduxThunk from 'redux-thunk';
 
 // Set up testing environment to run like a browser in the command line
 global.document = jsdom.jsdom('<!doctype html><html><body></body></html>');
 global.window = global.document.defaultView;
 const $ = jquery(global.window);
 
+const createStoreWithMiddleware = applyMiddleware(reduxThunk)(createStore);
+
+
 // build 'renderComponent' helper that should render a given react class
 function renderComponent(ComponentClass, props, state) {
   const componentInstance = TestUtils.renderIntoDocument(
-    <Provider store={createStore(reducers, state)}>
+    <Provider store={createStoreWithMiddleware(reducers, state)}>
       <ComponentClass {...props} />
     </Provider>
   );
