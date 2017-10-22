@@ -1,4 +1,4 @@
-import React, { Component }  from 'react';
+import React, { Component } from 'react';
 import OrganisationList from './organisation_list';
 import Header from './header';
 import { fetchOrganisations } from "../actions";

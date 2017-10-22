@@ -19,14 +19,14 @@ export function fetchOrganisations() {
 
 export function fetchAllCompany(organisations) {
     return function (dispatch) {
-            let tirmList = organisations.slice(0, 100);
-            let list = [];
-            let promises  = [];
+        let tirmList = organisations.slice(0, 100);
+        let list = [];
+        let promises = [];
 
-            tirmList.forEach(org => {
-                if (org.CompaniesOfficeNumber) {
-                    promises.push(
-                        axios.get(`${COMPANY_OFFICE_URL}${org.CompaniesOfficeNumber}`)
+        tirmList.forEach(org => {
+            if (org.CompaniesOfficeNumber) {
+                promises.push(
+                    axios.get(`${COMPANY_OFFICE_URL}${org.CompaniesOfficeNumber}`)
                         .then((response) => {
                             // return { ...org, statusCode: response.status };
                             list.push({ ...org, statusCode: response.status });
@@ -37,21 +37,21 @@ export function fetchAllCompany(organisations) {
                                 list.push({ ...org, statusCode: error.response.status });
                             }
                         })
-                    );
-                    // return { ...org, statusCode: request.statusCode };
-                } else {
-                    list.push({ ...org, statusCode: null });
-                    // return { ...org, statusCode: null };
-                }
-            });
-        
-            axios.all(promises).then(function(results) {
-                dispatch({
-                    type: FETCH_ALL_COMPANY,
-                    payload: list
-                })
+                );
+                // return { ...org, statusCode: request.statusCode };
+            } else {
+                list.push({ ...org, statusCode: null });
+                // return { ...org, statusCode: null };
             }
-            );                    
+        });
+
+        axios.all(promises).then(function (results) {
+            dispatch({
+                type: FETCH_ALL_COMPANY,
+                payload: list
+            })
+        }
+        );
 
     }
 

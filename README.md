@@ -13,13 +13,15 @@ https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/
 
 
 Test:
+
 Use mocha, chai, to run the test:
 npm run test
 
 Issues and to do:
+
 Only get the first 1000 charities, could add pagination in the future to get more.
 Only check the first 100 charity's company info, as I don't want to send to many http request to NZ company office from one computer.
-As there is a cors on, the browser need to enable cross-origin resource sharing, there is a chrome addon for it:
+As there is a cors issue, the browser need to enable cross-origin resource sharing, there is a chrome addon for it:
 https://chrome.google.com/webstore/detail/allow-control-allow-origi/nlfbmbojpeacfghkpbjhddihlkkiljbi?hl=en
 
 
