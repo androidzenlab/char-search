@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { COMPANY_OFFICE_URL } from "../actions"; 
+import PropTypes from 'prop-types';
 
 
 
@@ -67,6 +68,13 @@ class OrganisationList extends Component {
 }
 
 }
+
+OrganisationList.propTypes = {
+    organisations: PropTypes.oneOfType([
+        PropTypes.object,
+        PropTypes.array
+      ]),
+};
 
 function mapStateToProps({ organisations }) {
     return { organisations };

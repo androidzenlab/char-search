@@ -10,7 +10,7 @@ describe('App', () => {
   });
 
   it('has a header', () => {
-    console.log('app is:', component);
+    // console.log('app is:', component);
     expect(component.find('.navbar')).to.exist;
   });
 

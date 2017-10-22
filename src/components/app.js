@@ -1,7 +1,7 @@
 import React, { Component }  from 'react';
 import OrganisationList from './organisation_list';
 import Header from './header';
-import { fetchOrganisation } from "../actions";
+import { fetchOrganisations } from "../actions";
 import { connect } from "react-redux";
 
 
@@ -9,7 +9,7 @@ import { connect } from "react-redux";
 class App extends Component {
 
     componentWillMount() {
-        this.props.fetchOrganisation();
+        this.props.fetchOrganisations();
     }
 
     render() {
@@ -22,4 +22,4 @@ class App extends Component {
     }
 }
 
-export default connect(null, { fetchOrganisation })(App);
+export default connect(null, { fetchOrganisations })(App);

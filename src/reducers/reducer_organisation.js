@@ -1,5 +1,5 @@
 import _ from "lodash"
-import { FETCH_ORGANISATIONS, FETCH_ALL_COMPANY } from "../actions";
+import { FETCH_ORGANISATIONS, FETCH_ALL_COMPANY } from "../actions/types";
 
 export default function(state = {}, action) {
     switch (action.type) {
@@ -14,7 +14,7 @@ export default function(state = {}, action) {
       case FETCH_ALL_COMPANY:
           console.log('company payload is:', action.payload);
             //    return _.mapKeys(action.payload, "Name");
-              return action.payload;    
+          return action.payload;    
       default:
         return state;
     }

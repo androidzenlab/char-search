@@ -1,15 +1,11 @@
 import axios from "axios";
-
-export const FETCH_ORGANISATIONS = "fetch_organisations";
-export const FETCH_ORGANISATION = "fetch_organisation";
-export const FETCH_COMPANY = "fetch_company";
-export const FETCH_ALL_COMPANY = "fetch_all_company";
+import { FETCH_ORGANISATIONS, FETCH_ALL_COMPANY } from './types';
 
 const ROOT_URL = "http://www.odata.charities.govt.nz/Organisations?$format=json";
 
 export const COMPANY_OFFICE_URL = "https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/";
 
-export function fetchOrganisation() {
+export function fetchOrganisations() {
     return function (dispatch) {
         axios.get(`${ROOT_URL}`)
             .then(response => {
@@ -118,14 +114,4 @@ export function fetchAllCompany(organisations) {
     // const request = axios.get(`${COMPANY_OFFICE_URL}${companyNumber}`);
 
 
-}
-
-export function fetchCompany(companyNumber) {
-    const request = axios.get(`${COMPANY_OFFICE_URL}${companyNumber}`);
-
-
-    return {
-        type: FETCH_COMPANY,
-        payload: request
-    }
 }
