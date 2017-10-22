@@ -5,10 +5,14 @@
   "dependencies": {
     "axios": "^0.16.2",
     "cors": "^2.8.4",
+    "lodash": "^4.17.4",
     "react": "^16.0.0",
     "react-dom": "^16.0.0",
     "react-odata": "^7.0.2",
-    "react-scripts": "1.0.14"
+    "react-redux": "^5.0.6",
+    "react-scripts": "1.0.14",
+    "redux": "^3.7.2",
+    "redux-promise": "^0.5.3"
   },
   "scripts": {
     "start": "react-scripts start",
