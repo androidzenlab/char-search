@@ -7,7 +7,7 @@ export const FETCH_ALL_COMPANY = "fetch_all_company";
 
 const ROOT_URL = "http://www.odata.charities.govt.nz/Organisations?$format=json";
 
-const COMPANY_OFFICE_URL = "https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/";
+export const COMPANY_OFFICE_URL = "https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/";
 
 export function fetchOrganisation() {
     return function (dispatch) {
@@ -56,7 +56,7 @@ export function fetchAllCompany(organisations) {
         
             // });
 
-            let tirmList = organisations.slice(0, 10);
+            let tirmList = organisations.slice(0, 100);
             let list = [];
             let promises  = [];
 

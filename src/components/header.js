@@ -13,8 +13,9 @@ class Header extends Component {
 
     render() {
         return (
-          <nav className="navbar navbar-light">
-            <button onClick={this.findCompany.bind(this)} className="btn btn-primary">Find charity with company</button>
+          <nav className="navbar navbar-light bg-faded">
+            <h1 className="navbar-brand mb-0">Charity search</h1>
+            <button onClick={this.findCompany.bind(this)} className="nav-item btn btn-primary">Find charity with proper company</button>
           </nav>
         );
       }
