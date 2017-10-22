@@ -47,17 +47,6 @@ class OrganisationList extends Component {
                 <ul className="list-group">{this.renderOrganisations()}</ul>
             </div>
         );
-
-        // return <p>{props.organisations.OrganisationId}</p>
-        // const list = this.props.organisations.map(org => <li key={org.OrganisationId}>{org.Name} Number is: {org.CompaniesOfficeNumber}
-        //      Status code is: {org.statusCode}
-        // </li>);
-        
-        //     return (
-        //         <div className="org-list">
-        //         <ul className="list">{list}</ul>
-        //         </div>
-        //     );
     } else {
         return (
             <div className="org-list">

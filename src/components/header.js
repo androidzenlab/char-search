@@ -33,8 +33,3 @@ function mapStateToProps({ organisations }) {
 
 export default connect(mapStateToProps, {fetchAllCompany, fetchOrganisations})(Header);
 
-
-// this.props.fetchOrganisation();
-
-// export default connect(null, { fetchOrganisation })(App);
-
