@@ -1,10 +1,14 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-
+import { fetchAllCompany } from "../actions";
+// import { fetchOrganisation } from "../actions";
 class Header extends Component {
 
     findCompany() {
         console.log('start finding company...')
+        if (this.props.organisations.length > 0) {
+          this.props.fetchAllCompany(this.props.organisations);
+        }
     }
 
     render() {
@@ -16,4 +20,14 @@ class Header extends Component {
       }
 }
 
-export default connect()(Header);
+function mapStateToProps({ organisations }) {
+  return { organisations };
+}
+
+export default connect(mapStateToProps, {fetchAllCompany})(Header);
+
+
+// this.props.fetchOrganisation();
+
+// export default connect(null, { fetchOrganisation })(App);
+

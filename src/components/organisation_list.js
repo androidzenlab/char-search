@@ -3,9 +3,11 @@ import { connect } from 'react-redux';
 
 const OrganisationList = (props) => {
     console.log('props is:', props);
-    if (props.organisations.data) {
+    if (props.organisations.length > 0) {
         // return <p>{props.organisations.OrganisationId}</p>
-        const list = props.organisations.data.d.map(org => <li key={org.OrganisationId}>{org.Name}</li>);
+        const list = props.organisations.map(org => <li key={org.OrganisationId}>{org.Name} Number is: {org.CompaniesOfficeNumber}
+             Status code is: {org.statusCode}
+        </li>);
         
             return (
                 <div className="org-list">
