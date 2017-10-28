@@ -36,3 +36,12 @@ sudo apt-get install -y nodejs
 npm install -g serve 
 4. Unzip build.zip to build directory
 5. Run "serve -s build", server will be running at http://host:5000
+
+
+
+Deploy to GitHub:
+Follow the instructions on:
+https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md#github-pages
+to setup.
+Run command:
+npm run deploy
