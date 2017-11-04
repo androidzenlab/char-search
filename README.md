@@ -1,6 +1,11 @@
 
 Charity search
 
+Live demo:
+https://androidzenlab.github.io/char-search
+
+
+
 Charity search is a tool to search the charity organisations in New Zealand, then can find out which charity has an exising company attach to it, as many organisations's company are empty or not existing anymore. 
 It's using Reactjs, Redux, Redux-thunk, axios.
 To run application:
@@ -45,3 +50,4 @@ https://github.com/facebookincubator/create-react-app/blob/master/packages/react
 to setup.
 Run command:
 npm run deploy
+

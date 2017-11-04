@@ -1,13 +1,15 @@
 import axios from "axios";
 import { FETCH_ORGANISATIONS, FETCH_ALL_COMPANY } from './types';
 
-const ROOT_URL = "http://www.odata.charities.govt.nz/Organisations?$format=json";
+// const ROOT_URL = "http://www.odata.charities.govt.nz/Organisations?$format=json";
+// const ROOT_URL = "http://localhost:8080/"
+const ROOT_URL = "http://sample-ryan-of-server.a3c1.starter-us-west-1.openshiftapps.com/"
 
 export const COMPANY_OFFICE_URL = "https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/";
 
 export function fetchOrganisations() {
     return function (dispatch) {
-        axios.get(`${ROOT_URL}`)
+        axios.get(`${ROOT_URL}charity`)
             .then(response => {
                 dispatch({
                     type: FETCH_ORGANISATIONS,
@@ -26,7 +28,7 @@ export function fetchAllCompany(organisations) {
         tirmList.forEach(org => {
             if (org.CompaniesOfficeNumber) {
                 promises.push(
-                    axios.get(`${COMPANY_OFFICE_URL}${org.CompaniesOfficeNumber}`)
+                    axios.get(`${ROOT_URL}company/${org.CompaniesOfficeNumber}`)
                         .then((response) => {
                             // return { ...org, statusCode: response.status };
                             list.push({ ...org, statusCode: response.status });
