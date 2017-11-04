@@ -3,7 +3,7 @@ import { FETCH_ORGANISATIONS, FETCH_ALL_COMPANY } from './types';
 
 // const ROOT_URL = "http://www.odata.charities.govt.nz/Organisations?$format=json";
 // const ROOT_URL = "http://localhost:8080/"
-const ROOT_URL = "http://sample-ryan-of-server.a3c1.starter-us-west-1.openshiftapps.com/"
+const ROOT_URL = "https://sample-ryan-of-server.a3c1.starter-us-west-1.openshiftapps.com/"
 
 export const COMPANY_OFFICE_URL = "https://app.companiesoffice.govt.nz/companies/app/ui/pages/companies/";
 
